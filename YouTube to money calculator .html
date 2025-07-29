@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>View to Money Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2em; background: #f4f4f4; }
+    .calculator { background: white; padding: 2em; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    label { display: block; margin-top: 1em; font-weight: bold; }
+    input { width: 100%; padding: 10px; margin-top: 0.5em; border: 1px solid #ccc; border-radius: 6px; }
+    button { margin-top: 1.5em; padding: 10px; background: #007bff; color: white; border: none; border-radius: 6px; width: 100%; font-size: 16px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .result { margin-top: 2em; font-size: 18px; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h2>💰 View to Money Calculator</h2>
+    <label for="views">Number of Views:</label>
+    <input type="number" id="views" placeholder="e.g. 10000"><label for="rpm">RPM (KES per 1,000 views):</label>
+<input type="number" id="rpm" placeholder="e.g. 150">
+
+<button onclick="calculateEarnings()">Calculate</button>
+
+<div class="result" id="result"></div>
+
+  </div>  <script>
+    function calculateEarnings() {
+      const views = parseInt(document.getElementById('views').value);
+      const rpm = parseFloat(document.getElementById('rpm').value);
+
+      if (!isNaN(views) && !isNaN(rpm)) {
+        const earnings = (views / 1000) * rpm;
+        document.getElementById('result').textContent = `Estimated Earnings: KES ${earnings.toFixed(2)}`;
+      } else {
+        document.getElementById('result').textContent = 'Please enter valid numbers.';
+      }
+    }
+  </script></body>
+</html><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View to Money Calculator | Creator Earnings Tool</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eef2f5; margin: 0; padding: 0; }
+    header { background: #007bff; color: white; padding: 1.5em; text-align: center; }
+    main { padding: 2em; max-width: 600px; margin: auto; background: white; border-radius: 12px; margin-top: 2em; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    h1, h2 { text-align: center; }
+    label { display: block; margin-top: 1.2em; font-weight: bold; }
+    input, select { width: 100%; padding: 10px; margin-top: 0.5em; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+    button { margin-top: 2em; padding: 12px; background: #007bff; color: white; border: none; border-radius: 6px; width: 100%; font-size: 16px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    .result { margin-top: 2em; font-size: 20px; text-align: center; color: #333; }
+    footer { text-align: center; margin-top: 4em; color: #888; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📈 View to Money Calculator</h1>
+    <p>Estimate your earnings from YouTube, Facebook, or other platforms</p>
+  </header>  <main>
+    <h2>Enter Your Stats</h2><label for="views">👁️ Total Views:</label>
+<input type="number" id="views" placeholder="e.g. 10000">
+
+<label for="rpm">💵 RPM (per 1,000 views):</label>
+<input type="number" id="rpm" placeholder="e.g. 1.5">
+
+<label for="currency">🌍 Currency:</label>
+<select id="currency">
+  <option value="KES">KES (Kenya Shillings)</option>
+  <option value="USD">USD (US Dollars)</option>
+</select>
+
+<button onclick="calculateEarnings()">Calculate Earnings</button>
+
+<div class="result" id="result"></div>
+
+  </main>  <footer>
+    &copy; 2025 CreatorTools.ke | Built for Kenyan Creators 🇰🇪
+  </footer>  <script>
+    function calculateEarnings() {
+      const views = parseInt(document.getElementById('views').value);
+      const rpm = parseFloat(document.getElementById('rpm').value);
+      const currency = document.getElementById('currency').value;
+
+      if (!isNaN(views) && !isNaN(rpm)) {
+        const earnings = (views / 1000) * rpm;
+        const symbol = currency === 'KES' ? 'KES' : '$';
+        document.getElementById('result').textContent = `💰 Estimated Earnings: ${symbol} ${earnings.toFixed(2)}`;
+      } else {
+        document.getElementById('result').textContent = '⚠️ Please enter valid numbers above.';
+      }
+    }
+  </script></body>
+</html>
